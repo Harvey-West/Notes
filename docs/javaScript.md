@@ -461,3 +461,55 @@ console.log(car.start()); //Prints "Starting: Car now."
 ```
 
 ## Modules
+
+``` !js
+export class Car{
+    constructor(id){
+        this.id = id;
+    }
+}
+```
+This is all a module is! However to use it you do need to ```import{Identifier} from './path/to/file.js'```
+
+## setTimeout
+
+A function which simply makes a function or the window wait.  
+You can also cancel the timeout:
+
+``` !js
+let timeoutId = setTimeout(function(){
+    console.log('1 second paused');
+}, 1000);
+
+//Here I cancel it:
+clearTimeout(timeoutId);
+```
+
+## Selecting DOM Elements
+
+There are three main options:
+
+``` !js
+document.getElementById('elementId');
+
+document.getElementsByClassName('className'); //Returns an array!
+
+document.getElementsByTagName('tagName'); //Again returns an array!
+```
+
+## Try Catch and Finally
+
+Try and catch lets you attempt some code, then catch will run if an error is thrown:
+
+``` !js
+
+try{
+    let car = newCar;
+}
+catch(error){
+    console.log('error: ', error);
+}
+finally {
+    console.log('This always executes.');
+}
+```
