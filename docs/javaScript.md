@@ -95,6 +95,7 @@ startCars(...carIds);
 ```
 
 Interesting behaviour for strings:
+
 ``` !js
 function startCars(car1, car2, car3) {
     console.log(car1, car2, car3);
@@ -419,7 +420,7 @@ Locates the first match of something within an array: ```let car = carIds.find(c
 
 ## Class
 
-``` !js 
+``` !js
 class Car {
     constructor(id){
         this.id = id;
@@ -437,7 +438,7 @@ console.log(car.identify("!")); //Prints "Car: 123!"
 
 One of the most frustrating things is to remember to call super() on your classes beneath the inherited class.
 
-``` !js 
+``` !js
 class Vehicle {
     constructor(){
         this.type = 'Car';
@@ -469,6 +470,7 @@ export class Car{
     }
 }
 ```
+
 This is all a module is! However to use it you do need to ```import{Identifier} from './path/to/file.js'```
 
 ## setTimeout
