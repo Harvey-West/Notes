@@ -367,3 +367,97 @@ console.log(JSON.stringify(car));
 
 ### Parsing JSON
 
+``` !js
+let jsonIn =
+`
+    [
+        {"carId" : 1},
+        {"carId" : 2}
+        {"carId" : 3}
+    ]
+`;
+
+let carIds = JSON.parse(jsonIn);
+console.log(carIds);
+//[{...},{...},{...}] all 3 objects are printed in an array.
+```
+
+## Array Iteration
+
+Just going to give an example of different functions and their outputs while working with arrays (or JSON).
+
+``` !js
+let jsonIn =
+`
+    [
+        {"carId" : 1, make: 'Tesla'},
+        {"carId" : 2, make: 'Nissan'}
+        {"carId" : 3, make: 'BMW'}
+    ]
+`;
+
+let carIds = JSON.parse(jsonIn);
+```
+
+### For Each
+
+If we now call ```carIds.forEach(car => console.log(car));``` this will take each object assign it to "car" and pass it to the console to print it on a new line.
+
+Alternatively we can do ```carIds.forEach((car,index) => console.log(car,index));``` which prints the index along with the car.
+
+### Filter
+
+We can also filter and loop through the array and return only results that match certain criteria: ```let teslas = carIds.filter(car => car.make === 'Tesla');```.
+
+### Every
+
+Every simply returns a boolean about whether a condition you specify is met for every index ```let result = carIds.every(car => car.carId > 0);```.
+
+### Find
+
+Locates the first match of something within an array: ```let car = carIds.find(car => car.carId > 2);```.
+
+## Class
+
+``` !js 
+class Car {
+    constructor(id){
+        this.id = id;
+    }
+    identify(suffix){
+        return `Car Id: ${this.id} ${suffix}`;
+    }
+}
+
+let car = new Car(1);
+console.log(car.identify("!")); //Prints "Car: 123!"
+```
+
+### Inheritance
+
+One of the most frustrating things is to remember to call super() on your classes beneath the inherited class.
+
+``` !js 
+class Vehicle {
+    constructor(){
+        this.type = 'Car';
+    }
+    start(){
+        return `Starting: ${this.type}`;
+    }
+}
+
+class Car extends Vehicle{
+    constructor() {
+        super(); //Special function which refers back to the super class.
+    }
+    start(){
+        return super.start() + ' now.';
+    }
+}
+
+let car = new Car();
+console.log(car.start()); //Prints "Starting: Car now."
+```
+
+## Modules
