@@ -507,6 +507,7 @@ Try and catch lets you attempt some code, then catch will run if an error is thr
 
 try{
     let car = newCar;
+    //throw new Error('custom error'); //Could make an error which inherits from error to throw here.
 }
 catch(error){
     console.log('error: ', error);
@@ -515,3 +516,23 @@ finally {
     console.log('This always executes.');
 }
 ```
+
+## Promises
+
+Asynchronous call basically. You promise to get a result some time in the future.
+
+``` !js
+let promise = new Promise(
+    function(resolve, reject){
+        setTimeout(resolve, 100, 'someValue');
+        //Or some code which goes and scrapes data via HHTP requests etc.  
+    }
+);
+promise.then(
+    value => console.log('fulfilled: ' + value),
+    error => console.log('rejected: ' + error)
+);
+//Prints fulfilled: someValue
+```
+
+This code would execute the function ```resolve``` after 100 miliseconds passing in the value ```'someValue'```.
