@@ -46,9 +46,24 @@ let squareIt : (rect:{h:number; w?:number}) => number
 ## Interfaces
 
 An interface will let you create functions with a type almost and then when you create functions with that type it will check it against that interface.
+
 ``` !js
 interface SquareFunction{
-    (x: number):number;
+    (x: number):number;git s
 }
 let squareItBasic:SquareFunction = (num) => num * num;
+```
+
+Interfaces can also be used to functions which then return functions..
+
+### Interfaces and clases 
+
+Same thing for classes so a class may have some properties and functions:
+
+``` !js
+interface Rectangle{
+    height: number;
+    width?: number;
+    calcArea:() => number;
+}
 ```
