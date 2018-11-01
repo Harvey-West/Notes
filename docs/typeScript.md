@@ -4,7 +4,7 @@
 
 One method to show types for a function in TypeScript:
 
-``` !ts
+``` ts
 init : (s: string, p: string, c: string) => void
     = function(s, p, c)
     {
@@ -33,7 +33,7 @@ References are then done via:```/// <reference path="./path/file.d.ts">```
 
 You can define optional parameters for a typescript function by doing the below as an example:
 
-``` !js
+``` ts
 let squareIt : (rect:{h:number; w?:number}) => number
     = function(rect:{h:number; w?:number;}){
         if(rect.w === undefined){
@@ -47,7 +47,7 @@ let squareIt : (rect:{h:number; w?:number}) => number
 
 An interface will let you create functions with a type almost and then when you create functions with that type it will check it against that interface.
 
-``` !js
+``` ts
 interface SquareFunction{
     (x: number):number;git s
 }
@@ -62,7 +62,7 @@ Note that private variables in classes don't work for anything less than ES5 (IE
 
 Interfaces easily can be used for classes so a class may have some properties and functions:
 
-``` !js
+``` ts
 interface Car{
     engine: string;
     model?: string;
@@ -97,7 +97,7 @@ Sometimes you can't create the type through a function that clearly defines that
 
 Take a look at this example:
 
-``` !js
+``` ts
 let table:HTMLTableElement = document.createElement('table');
 //The above code will fail because createElement does not return
 //type HTMLTableElement all the time! As such we do:

@@ -2,7 +2,7 @@
 
 ## Let vs Var
 
-``` !js
+``` js
 let carIds = [1,2,3];  
 var varCarIds = [1,2,3];
 ```
@@ -11,7 +11,7 @@ Let focuses on code scope. So if I tried to call it before declaring it, it will
 Var is different in that it doesn't error so much as say undefined if declared later.  
 Furthermore this code will produce which is desirable!
 
-``` !js
+``` js
 if(true){
     let inCode = true;
 }
@@ -23,7 +23,7 @@ console.log(inCode);
 
 Rest parameters is where at the end of a function definition of parameters you can take any number of params and put them into an array. Take the below example:  
 
-``` !js
+``` js
 function sendCars(day, ...allCarIds){
     allCarIds.forEach(id => console.log(id));
 }
@@ -37,7 +37,7 @@ sendCars('Monday', 100, 200, 300);
 
 This is a method to assign values already existing in an array to variables. This is useful if you're getting some values but are waiting for the rest later! Take the below example:  
 
-``` !js
+``` js
 let carIds = [1,2,5];
 let [car1, car2, car3] = carIds;
 
@@ -47,7 +47,7 @@ console.log(car1, car2, car3);
 
 You can also do this with rest paramets and therefore maybe do some funky recursion:  
 
-``` !js
+``` js
 let [car1, ...remainingCars] = carIds;
 console.log(car1, remainingCars);
 
@@ -56,7 +56,7 @@ console.log(car1, remainingCars);
 
 or  
 
-``` !js
+``` js
 [,, ...remainingCars] = carIds;
 coinsole.log(remainingCars);
 
@@ -65,7 +65,7 @@ coinsole.log(remainingCars);
 
 ### Destructing Objects
 
-``` !js
+``` js
 let car = {id: 3, make: 'honda'};
 let {id, style} = car;
 //Do not put the curly brace on a new line as the compiler
@@ -81,7 +81,7 @@ console.log(id, style);
 
 This allows you to take an array and spread out the elements to be assigned to parameters.
 
-``` !js
+``` js
 function startCars(car1, car2, car3) {
     console.log(car1, car2, car3);
 }
@@ -96,7 +96,7 @@ startCars(...carIds);
 
 Interesting behaviour for strings:
 
-``` !js
+``` js
 function startCars(car1, car2, car3) {
     console.log(car1, car2, car3);
 }
@@ -116,13 +116,13 @@ If it starts with a character it cannot convert if fails straight away.
 
 #### String to Integer
 
-``` !js
+``` js
 Number.parseInt('55');
 ```
 
 #### String to Number (float)
 
-``` !js
+``` js
 Number.parseFloat('55.99');
 ```
 
@@ -132,7 +132,7 @@ Number.parseFloat('55.99');
 
 Javascript will try and convert these variables to be the same type!
 
-``` !js
+``` js
 if (var1 == var2){}
 ```
 
@@ -140,12 +140,12 @@ To prevent this use ```===``` as this will prevent type conversion. Same for ```
 
 ### Unary Operators
 
-``` !js
+``` js
 ++var1
 var1++ //This would not convert a string to a numeric if used in an expression till after the expression.
 ```
 
-``` !js
+``` js
 +var1 \\This converts a string to a numeric type! Retains the sign on the number too.
 -var1 \\This could change the sign of a variable before an expression
 ```
@@ -154,13 +154,13 @@ var1++ //This would not convert a string to a numeric if used in an expression t
 
 If foo > 5 then it will evaluate to the true part of the expression, otherwise false.
 
-``` !js
+``` js
 var result = (foo > 5) ? console.log(true) : console.log(false);
 ```
 
 ### Assignment Operators
 
-``` !js
+``` js
 var1 += 10;
 var1 -= 10;
 var1 <<= 1; //Shift bits to the left. Equivalent to multiplying it by 2.
@@ -173,7 +173,7 @@ var1 >>>= 1; //Shift bits to the right but keep the sign.
 Running the function immediately as it's declared.
 The below function is called right away!
 
-``` !js
+``` js
 (function() {
     console.log('in function');
 })();
@@ -181,7 +181,7 @@ The below function is called right away!
 
 To make it into an IIFE you can do:
 
-``` !js
+``` js
 let app = (function() {
     let carId = 1;
     console.log('in function');
@@ -193,7 +193,7 @@ let app = (function() {
 
 Via an IIFE we can make the functions and variables hang around after initial execution.
 
-``` !js
+``` js
 let app = (function() {
     let carId = 1;
     let getId = function() {
@@ -210,7 +210,7 @@ console.log(app.getId()); // prints out 1!
 
 Here's an example (works without strict mode):
 
-``` !js
+``` js
 let fun = function() {
     console.log(this === window);
 }
@@ -219,7 +219,7 @@ fun(); //This returns true! It equals the global object.
 
 Equally:
 
-``` !js
+``` js
 let o = {
     carId: 1,
     getId: function() {
@@ -237,7 +237,7 @@ Main purpose of these is to change the purpose of this.
 
 #### Call
 
-``` !js
+``` js
 let o = {
     carId: 1,
     getId: function() {
@@ -252,7 +252,7 @@ console.log(o.getId.call(newCar));//Prints out 2!
 
 Similar to call but you can pass in arguments.
 
-``` !js
+``` js
 let o = {
     carId: 1,
     getId: function(prefix) {
@@ -267,7 +267,7 @@ console.log(o.getId.apply(newCar, ['ID: ']));//Prints out ID: 2
 
 This lets us make a copy of the function and assigns a new context or modifies this.
 
-``` !js
+``` js
 let o = {
     carId: 1,
     getId: function() {
@@ -285,7 +285,7 @@ A concise and modern syntax for function definitions that do NOT have their own 
 
 To see some examples with arrow functions:
 
-``` !js
+``` js
 let getId = () => 1; //Nothing in () i.e. no parameters
 
 console.log(getId()); //Prints 1.
@@ -301,7 +301,7 @@ console.log(getGreeting('Hey ', '!')); //Hey Alan!
 
 ## Interpolation
 
-``` !js
+``` js
 let trackCar = function(carId, city='NY'){
     console.log(`Tracking ${carId} in ${city}.`);
 };
@@ -321,7 +321,7 @@ Remember convention is to uppercase the constructor function!
 
 Prototypes help you manage memory and many other features. Take the below example:
 
-``` !js
+``` js
 function Car(id){
     this.carId = id;
     this.start = function(){
@@ -337,7 +337,7 @@ The function this.start will be replicated thousands of times if you call ```new
 
 To fix this we can do the below:
 
-``` !js
+``` js
 function Car(id){
     this.carId = id;
 }
@@ -356,7 +356,7 @@ car.start(); //start: 1
 
 To create JSON style strings we can do:
 
-``` !js
+``` js
 let car = {
     id: 1,
     make: 'tesla'
@@ -368,7 +368,7 @@ console.log(JSON.stringify(car));
 
 ### Parsing JSON
 
-``` !js
+``` js
 let jsonIn =
 `
     [
@@ -387,7 +387,7 @@ console.log(carIds);
 
 Just going to give an example of different functions and their outputs while working with arrays (or JSON).
 
-``` !js
+``` js
 let jsonIn =
 `
     [
@@ -420,7 +420,7 @@ Locates the first match of something within an array: ```let car = carIds.find(c
 
 ## Class
 
-``` !js
+``` js
 class Car {
     constructor(id){
         this.id = id;
@@ -438,7 +438,7 @@ console.log(car.identify("!")); //Prints "Car: 123!"
 
 One of the most frustrating things is to remember to call super() on your classes beneath the inherited class.
 
-``` !js
+``` js
 class Vehicle {
     constructor(){
         this.type = 'Car';
@@ -463,7 +463,7 @@ console.log(car.start()); //Prints "Starting: Car now."
 
 ## Modules
 
-``` !js
+``` js
 export class Car{
     constructor(id){
         this.id = id;
@@ -478,7 +478,7 @@ This is all a module is! However to use it you do need to ```import{Identifier} 
 A function which simply makes a function or the window wait.  
 You can also cancel the timeout:
 
-``` !js
+``` js
 let timeoutId = setTimeout(function(){
     console.log('1 second paused');
 }, 1000);
@@ -491,7 +491,7 @@ clearTimeout(timeoutId);
 
 There are three main options:
 
-``` !js
+``` js
 document.getElementById('elementId');
 
 document.getElementsByClassName('className'); //Returns an array!
@@ -503,7 +503,7 @@ document.getElementsByTagName('tagName'); //Again returns an array!
 
 Try and catch lets you attempt some code, then catch will run if an error is thrown:
 
-``` !js
+``` js
 
 try{
     let car = newCar;
@@ -521,7 +521,7 @@ finally {
 
 Asynchronous call basically. You promise to get a result some time in the future.
 
-``` !js
+``` js
 let promise = new Promise(
     function(resolve, reject){
         setTimeout(resolve, 100, 'someValue');
