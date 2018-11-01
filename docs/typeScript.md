@@ -104,3 +104,24 @@ let table:HTMLTableElement = document.createElement('table');
 let table:HTMLTableElement = <HTMLTableElement>document.createElement('table');
 //And now it works and we get intellisense!
 ```
+
+## Extending Types
+
+This is done via the ```extends``` keyword and it ***must*** include the ```super()```
+command:
+
+``` ts
+class ParentClass{
+    myParameter: string;
+    constructor(myParameter:string){
+        this.myParameter = myParameter;
+    }
+}
+class ChildClass extends ParentsClass{
+    mySecondParemeter: string;
+    constructor(myParameter: string, mySecondParameter: boolean){
+        super(myParameter);
+        this.mySecondParameter = mySecondParameter;
+    }
+}
+```
