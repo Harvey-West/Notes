@@ -14,7 +14,9 @@ init : (s: string, p: string, c: string) => void
 init : (s: string, p: string, c: string) => void;
 init = (s, p, c) => something;
 ```
+
 ---
+
 ## Ambient Declarations
 
 An ambient declaration is where you declare something which you don't
@@ -67,7 +69,7 @@ let squareItBasic:SquareFunction = (num) => num * num;
 
 Interfaces can also be used to functions which then return functions..
 
-### Interfaces and clases 
+### Interfaces and classes
 
 Note that private variables in classes don't work for anything less than ES5
 (IE7 or below).
@@ -182,4 +184,16 @@ class ChildClass extends ParentsClass{
         this.mySecondParameter = mySecondParameter;
     }
 }
+```
+
+## Declaration Files
+
+## Modules
+
+Modules allow code to be reused in a clear and concise way.
+
+``` ts
+namespace dataservice {
+    //code
+};
 ```
