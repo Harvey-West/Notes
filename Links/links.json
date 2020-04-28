@@ -1,0 +1,26 @@
+{
+    "programming":{
+        "MIT": {
+            "link": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/",
+            "description": "Useful courses in computer science @ MIT"
+        },
+        "Computer System Engineering @ MIT": {
+            "link": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-033-computer-system-engineering-spring-2018/",
+            "description": "6.005 Software Construction introduces fundamental principles and techniques of software development, i.e., how to write software that is safe from bugs, easy to understand, and ready for change. The course includes problem sets and a final project. Important topics include specifications and invariants; testing; abstract data types; design patterns for object-oriented programming; concurrent programming and concurrency; and functional programming."
+        },
+        "Software Construction @ MIT": {
+            "link": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-005-software-construction-spring-2016/",
+            "description": "This class covers topics on the engineering of computer software and hardware systems. Topics include techniques for controlling complexity; strong modularity using client-server design, operating systems; performance, networks; naming; security and privacy; fault-tolerant systems, atomicity and coordination of concurrent activities, and recovery; impact of computer systems on society."
+        },
+        "Data Structures": {
+            "link": "https://sp18.datastructur.es/",
+            "description": "Introduction to data structures and software engineering"
+        }
+    },
+    "health": {
+        "Healthy Eating":{
+            "link": "https://online-learning.harvard.edu/course/6-week-plan-healthy-eating?delta=0",
+            "description": "Although each food choice we make may seem small, it’s the little decisions we make each day that can derail our health goals and increase our risk for heart disease, stroke, diabetes and even cancer. In this all-new online course, Harvard Health Publishing presents an engaging, empowering and exciting way to learn about healthy eating. While the course is designed as a 6-week plan, you can watch and learn at your own pace.     All the tips, techniques and healthy food secrets are explained by our experts through fascinating slides, informative charts, interactive exercises and entertaining quizzes. You’ll get worksheets, a food diary, shopping lists and more that you can download and print to motivate you and help you stay on track."
+        }
+    }
+}

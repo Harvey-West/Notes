@@ -1,0 +1,34 @@
+Besu uses proof of work and proof of authority - https://besu.hyperledger.org/en/stable/
+JSON-RPC API https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/API/
+Pub/Sub is supported
+
+Multi-party signing authorization scheme with Ethereum or Fabric would require either the applications doing the coordination to collect signatures, or submitting multiple transactions each from a different signatory. Corda transactions on the other hand is natively built on the concept of signature collection and coordination, using “flows”.
+
+Corda also supports non-validating notaries for privacy purposes. Non-validating notaries only checks for double-spending without validating the transaction input themselves. Transaction details such as signer identities are hidden from non-validating notaries. This provides similar privacy support as the design adopted by Quorum (as well as Hyperledger Besu which supports the same private transaction design) and Fabric, where only the hash for the private transaction is shared with the consensus service.
+
+Ethereum’s smart contracts are immutable. After deployment, they can’t be upgraded. This is by design because in the public blockchain it would not be a good idea to allow the logic behind a contract to be changed after public investment with ICOs.
+
+Upgrading a smart contract in Ethereum requires one of two approaches:
+
+    Upgradable Contracts through a Proxy Contract – where the original contract code is written with migration in mind. So that all of the logic and state is upgradable, without changing the interface or address.
+    Contract Migration – deploying a new contract, which gets assigned a new address, and copying over the existing state from the old version.
+
+Both are well documented and practiced with code libraries and examples in the community.
+
+
+
+
+####TOKENS####
+The most fundamental concept is fungibility. It can be loosely interpreted as “being exchangeable.” Currency is a fungible asset class because all U.S. dollar bills are worth exactly the same and you do not have to have any particular dollar bill to get the value. Real estate, on the other hand, is a non-fungible asset class because every house is unique. Even if the design is exactly the same, the difference in location can drastically affect the values of any two houses.
+
+Typical features of a token include the following:
+
+    Ownership: who owns a particular token (non-fungible) or what amount of tokens (fungible).
+    Transfer: to allow the digital assets to be traded.
+    Minting: for new tokens to be created for circulation.
+    Burning: owners are allowed to “burn” tokens. This is used in cross-chain trades. Since tokens can not transfer across chains, they get burned in the sender’s chain and minted in the receiver’s chain.
+    Custody: owners can approve of accounts to look after a portion of their tokens. In scenarios where an escrow is involved, the escrow account can be approved as a custodian by the tokens owner.
+
+###############
+
+https://besu.hyperledger.org/en/stable/Tutorials/Quickstarts/Private-Network-Quickstart/
