@@ -59,8 +59,14 @@ A deployment controller provides dclarative updates for pods and ReplicaSets. Yo
 
 ### DaemonSets
 
-
-
 ### Jobs
 
 ### Services
+
+
+## Commands
+
+|Command | Use |
+--|--
+`kubectl get pods` | returns all the active pods|
+`kubectl get services` | returns all the active services|

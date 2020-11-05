@@ -46,6 +46,16 @@ Run the below in powershell only:
 
 `docker rm -v $(docker ps -a -q -f status=exited)` - Deletes exited containers
 
+### Deleting all images:
+
+Open gitbash and you can run this command to clean all your images:
+
+`docker images -a | awk '{print $3}' | xargs docker rmi`
+
+Equally you can delete some which match a certain patter:
+
+`docker images -a | grep "pattern" | awk '{print $3}' | xargs docker rmi`
+
 ## Dockerfile commands
 
 Command Description - <https://docs.docker.com/engine/reference/builder/>

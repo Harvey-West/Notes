@@ -71,7 +71,10 @@ Note that this line is separate, but within the same paragraph . .
 
 [1]: www.mozilla.org
 ```
+## Images
 
+You can link an image like so:
+![Azure-AKS-Dashboard](./../Cloud/Pictures/Azure/Azure-AKS-dashboard.png?raw=true)
 # Tables
 
 | Tables | Are | Made | Like | This |
